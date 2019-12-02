@@ -2,7 +2,11 @@ import React from "react";
 import "./App.css";
 import logo from "./logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import $ from "jquery";
 import Upcoming from "./components/Upcoming";
+import Live from "./components/Live";
+import Past from "./components/Past";
 
 function App() {
   return (
@@ -49,7 +53,7 @@ function App() {
               className="nav-link"
               id="contact-tab"
               data-toggle="tab"
-              href="#contact"
+              href="#past"
               role="tab"
               aria-controls="contact"
               aria-selected="false"
@@ -58,7 +62,11 @@ function App() {
             </a>
           </li>
         </ul>
-        <Upcoming />
+        <div className="tab-content" id="myTabContent">
+          <Upcoming />
+          <Live />
+          <Past />
+        </div>
       </div>
     </div>
   );
